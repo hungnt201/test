@@ -75,7 +75,47 @@ let n = [{
 while(1){
 let ucom = prompt("R, C, U, D");
     if(ucom == 'R' ){
+        console.table(n);
         
+    }else if(ucom == 'C' ){
+   
+       let tên = prompt("nhập tên");
+       let tuổi = Number(prompt("nhập tuổi"));
+       let lương = Number(prompt("nhập lương"));
+       let chức = prompt("nhập chức");
+
+       let nn = {
+        tên: tên,
+        tuổi: tuổi,
+        lương: lương,
+        chức: chức,
+       };
+
+       n.push(nn);
+       console.table(n)
+    }else if(ucom == 'U' ){
+        let tênm = prompt("nhập tên muốn sửa");
+        let tìm = n.findIndex(tphan => tphan.tên == tênm);
+        if (tìm == -1){
+            console.log("không có tên")
+        }else{
+            n[tphan].tên = prompt("nhập tên")
+            console.table(n[tphan]);
+        }
+
+    }else if(ucom == 'D'){
+        let tênx = prompt("nhập tên muốn xóa");
+        let tìm = n.findIndex(tphan => tphan.tên == tênx);
+        if (tìm == -1){
+            console.log("không có tên")
+        }else {
+            n.slice(tphan, 1);
+        }
+    }else {
+        break;
     }
 
+
 }
+     
+
